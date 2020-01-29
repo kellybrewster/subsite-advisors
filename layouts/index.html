@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">-->
+<link href="fontawesome/css/all.css" rel="stylesheet">--> <!--load all styles -->
+<!-- Flourish Fonts -->
+<style type="text/css">
+	@font-face {
+		font-family: "Graphik Web";
+		font-style: normal;
+		font-weight: 300;
+		src: url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Regular-Web.eot");
+		src: url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Regular-Web.eot?#iefix") format("embedded-opentype"),
+			url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Regular-Web.woff2") format("woff2"),
+			url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Regular-Web.woff") format("woff");
+	}
+
+	@font-face {
+		font-family: "Graphik Web";
+		font-style: normal;
+		font-weight: 500;
+		src: url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.eot");
+		src: url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.eot?#iefix") format("embedded-opentype"),
+			url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.woff2") format("woff2"),
+			url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.woff") format("woff");
+	}
+
+	/* For some reason iOS mail supports 700 but not 500 */
+	@font-face {
+		font-family: "Graphik Web";
+		font-style: normal;
+		font-weight: 700;
+		src: url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.eot");
+		src: url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.eot?#iefix") format("embedded-opentype"),
+			url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.woff2") format("woff2"),
+			url("https://s3.amazonaws.com/flourish-static/email/assets/Graphik-Medium-Web.woff") format("woff");
+	}
+</style>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Graphik Web", 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+  font-family: "Graphik Web", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricprecision;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  /*background-size: cover;*/
+  /*background-image: url("img/mac.jpg");*/
+  background-image: url("https://static.flourish.com/static/web-master-v1.0.2-557-gcf9d02c24/images/background.ded95920.svg");
+	/*min-height: 100%;*/
+	height: 400px;
+	background-repeat: no-repeat;
+	background-color: rgb(32, 32, 32);
+}
+
+.w3-light {
+	font-weight: 300 !important;
+	font-size: 20px !important;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+	
+.w3-bar-item {
+	color: rgb(35, 35, 35);
+}
+	
+.fl-button {
+	border-radius: 10000px;
+}
+
+.fl-dark-green {
+	background-color: #4F846E;
+}
+	
+.fl-light-green {
+	background-color: #35B383;
+}
+	
+.fl-text-white {
+	color: #fff;
+}
+
+.fl-padding-button {
+	padding: 8px 24px !important;
+}
+	
+.fl-bold {
+	font-weight: 700;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="img/Flourish_Black@32px-01.svg"></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">For individuals</a>
+      <a href="#team" class="w3-bar-item w3-button">For organizations</a>
+      <a href="#work" class="w3-bar-item w3-button">How it works</a>
+      <a href="#pricing" class="w3-bar-item w3-button">Who we are</a>
+      <a href="#contact" class="w3-bar-item w3-button">Log in</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<!-- w3-grayscale-min adds 50% opacity -->
+<header class="bgimg-1 w3-display-container" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Built for Advisors</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Built for Advisors</span><br>
+    <span class="w3-large w3-light">The only cash management platform built from the ground up<br>for financial advisors and their clients.</span>
+    <p><a href="#about" class="w3-button w3-white fl-padding-button w3-large w3-margin-top w3-hover fl-button opacity-off">Join us today</a></p>
+  </div> 
+  <!--<div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>-->
+</header>
+
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:32px 64px 24px 64px"><!-- padding was 128 top&bottom -->
+  <p class="w3-large w3-justify w3-align-justify">Studies show that HNW investors hold, on average, 20% or more of their wealth in cash. With Flourish Cash, advisors can finally help their clients with one of the most important parts of their financial lives they don’t address today.</p>
+   <div class="w3-row-padding">
+    <div class="w3-col m6 w3-center">
+      <h3>For clients</h3>
+      <p>Studies show that HNW investors hold, on average, 20% or more of their wealth in cash. With Flourish Cash, advisors can finally help their clients with one of the most important parts of their financial lives they don’t address today.</p>
+      <p style="padding-top:32px;"><a href="#work" class="fl-button w3-button w3-black w3-padding-large w3-large w3-margin-top fl-padding-button"><!--<i class="fa fa-th"> </i> -->Ask us how</a></p>
+    </div>
+    <div class="w3-col m6">
+      <h3 class="w3-center">For advisors</h3>
+		<p><img height=18 src="img/icons/check.svg" style="margin-right:12px;"><span class="" style="margin-right:8px;">Offer an immediate value-add to prospects</span></p>
+		<p><img height=18 src="img/icons/check.svg" style="margin-right:12px;"><span class="w3-large fl-bold" style="margin-right:8px;">Organically start new conversations through Flourish Cash referrals</span></p>
+		<p><img height=18 src="img/icons/check.svg" style="margin-right:12px;"><span class="w3-large fl-bold" style="margin-right:8px;">Provide branded materials to differentiate with your centers of influence</span></p>
+		<p><img height=18 src="img/icons/check.svg" style="margin-right:12px;"><span class="w3-large fl-bold" style="margin-right:8px;">Invite key stakeholders at your institutional relationships</span></p>
+    </div>
+  </div>
+</div>
+	
+<!-- About Section -->
+<div class="w3-container" style="padding:32px 16px" id="about">
+  <h3 class="w3-center">Why top advisors choose Flourish Cash</h3>
+  <!--<p class="w3-center w3-large">Key features of our company</p>-->
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-arrow-circle-up w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Deliver more</p>
+      <p>Help your clients with a key piece of their financial lives that sits outside the portfolio</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Enhance your brand</p>
+      <p>Feature your logo across the website, emails and materials</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-search-dollar w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Gain visibility</p>
+      <p>Through an advisor dashboard and key integrations, gain visibility into held-away cash</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-users w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Grow your business</p>
+      <p>Invite prospects and generate referrals</p>
+    </div>
+  </div>
+</div>
+	
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-black" style="padding:32px 0 64px 0;">
+	<h3 class="w3-center">Trusted by The Best in the Industry</h3>
+	<div class="w3-row-padding w3-center" style="margin-top:48px">
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge"><img height=100 src="img/firms/Buckingham.svg" style="opacity:0.85;" /></span>
+	  </div>
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge"><img height=100 src="img/firms/Savant.svg" style="opacity:0.85;" /></span>
+	  </div>
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge"><img height=100 src="img/firms/ColonyGroup.svg" style="opacity:0.85;" /></span>
+	  </div>
+	  <div class="w3-quarter">
+		<span class="w3-xxlarge"><img height=100 src="img/firms/RonaldBlueTrust.svg" style="opacity:0.85;" /></span>
+	  </div>
+	</div>
+</div>
+	
+<!-- Promo Section - "We know design" -->
+<div class="w3-container w3-light-grey" style="padding:32px 16px 0 16px"><!-- padding was 128 top&bottom -->
+  <div class="w3-row-padding">
+    <div class="w3-col m6" style="padding-top:48px;">
+      <h3>Bring held-away cash into your orbit.</h3>
+      <p>Flourish Cash households, on average, hold at least $250k in cash outside of their portfolio. Flourish Cash enables you to address this cash - a new planning opportunity.</p>
+      <p style="padding-top:32px;"><a href="#work" class="fl-button w3-button w3-black w3-padding-large w3-large w3-margin-top"><!--<i class="fa fa-th"> </i> -->Ask us how</a></p>
+    </div>
+    <div class="w3-col m6 w3-center">
+      <!--<img class="w3-image w3-round-large" src="img/phone_buildings.jpg" alt="Buildings" width="700" height="394">-->
+		<img class="w3-image" src="https://static.flourish.com/static/web-master-v1.0.2-557-gcf9d02c24/images/tablet.f76978f9.svg" alt="Flourish Cash" width=400 />
+    </div>
+  </div>
+</div>
+	
+<!-- Pricing Section -->
+<!-- was padding:128px 16px; -->
+<div class="w3-container w3-center" style="padding:32px 16px; background-color: #232323;" id="pricing">
+  <h3 class="fl-text-white w3-xxlarge">What Our Customers Say</h3>
+  <p class="fl-text-white w3-large">Don't take our word for it.</p>
+  <div class="w3-row-padding" style="margin-top:32px"><!-- was 64px -->
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32" style="border-bottom:4px solid #35B383;">Branding</li>
+        <li class="w3-padding-16">
+          <h2>"The branding makes it clear that this is value I'm getting from my advisor."</h2>
+        </li>
+        <li class="w3-padding-16 w3-light-grey">
+          <h2>Jack Britts</h2>
+          <span class="w3-opacity">Client, The Colony Group</span>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-48" style="border-bottom:4px solid #35B383;">User Experience</li>
+		<li class="w3-padding-16">
+          <h2>"Your website is one giant easy button."</h2>
+        </li>
+        <li class="w3-padding-16 w3-light-grey">
+          <h2>Greg Friedman</h2>
+          <span class="w3-opacity">CEO, Private Ocean</span>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-32" style="border-bottom:4px solid #35B383;">Growth</li>
+        <li class="w3-padding-16">
+          <h2>"The prospect was grateful that we could offer them Flourish and it led to a larger conversation."</h2>
+        </li>
+        <li class="w3-padding-16 w3-light-grey">
+          <h2>Kristi de Grys</h2>
+          <span class="w3-opacity">CIO, Merriman</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Team Section -->
+<!--<div class="w3-container" style="padding:128px 16px" id="team">
+  <h3 class="w3-center">THE TEAM</h3>
+  <p class="w3-center w3-large">The ones who runs this company</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="img/team2.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>John Doe</h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="img/team1.jpg" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>Anja Doe</h3>
+          <p class="w3-opacity">Art Director</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Mike Ross</h3>
+          <p class="w3-opacity">Web Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
+        <div class="w3-container">
+          <h3>Dan Star</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!-- Work Section -->
+	<!--
+<div class="w3-container" style="padding:128px 16px" id="work">
+  <h3 class="w3-center">OUR WORK</h3>
+  <p class="w3-center w3-large">What we've done for people</p>
+
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+    </div>
+  </div>
+</div>-->
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Case Study One -->
+<div class="w3-container w3-light-grey w3-padding-64">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>Case Study One</h3>
+      <p>Two partners, A &amp; B, sold a business. Partner A was successfully prospected as a client.
+“It was too early to reach out to the partner since we just began the relationship with the first partner, but we were able to offer him Flourish. The partner was grateful we could offer it to him, and that led to him coming in for a meeting and ultimately becoming a client.”</p>
+      <p>"Flourish Cash was instrumental in making this happen."</p>
+    </div>
+    <div class="w3-col m6">
+      <!--<p class="w3-wide"><i class="fa fa-camera w3-margin-right"></i>Photography</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>Web Design</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Photoshop</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:75%">75%</div>
+      </div>-->
+    </div>
+  </div>
+</div>
+	
+<!-- Skills Section -->
+<!--
+<div class="w3-container w3-light-grey w3-padding-64">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>Case Study One</h3>
+      <p>Two partners, A &amp; B, sold a business. Partner A was successfully prospected as a client.
+“It was too early to reach out to the partner since we just began the relationship with the first partner, but we were able to offer him Flourish. The partner was grateful we could offer it to him, and that led to him coming in for a meeting and ultimately becoming a client.”</p>
+      <p>"Flourish Cash was instrumental in making this happen."</p>
+    </div>
+    <div class="w3-col m6">
+      <p class="w3-wide"><i class="fa fa-camera w3-margin-right"></i>Photography</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>Web Design</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Photoshop</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:75%">75%</div>
+      </div>
+    </div>
+  </div>
+</div>-->
+	
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">180+</span>
+    <br>Firms
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">$1Bn+</span>
+    <br>Average Firm Size
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">50</span>
+    <br>States
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">200+</span>
+    <br>Somethings
+  </div>
+</div>
+	
+<!-- Contact Section -->
+<!--<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    <br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+    <!-- Image of location/map --><!--
+    <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+  </div>
+</div>-->
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <!--<div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>-->
+  <p style="margin-top:64px; padding: 0 64px;text-align: justify;">Flourish is a platform for products and/or services offered through one or more affiliates of Stone Ridge Holdings Group LP. Flourish Cash is a service offered by Stone Ridge Securities LLC, a broker-dealer registered with the Securities and Exchange Commission and a member of FINRA. Check the background of Stone Ridge Securities LLC on FINRA’s BrokerCheck.</p>
+	<p style="padding: 0 64px;text-align: justify;">&copy;2020 Stone Ridge Securities</p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
